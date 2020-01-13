@@ -20,3 +20,12 @@ if __name__ == "__main__":
             )
         raise
     execute_from_command_line(sys.argv)
+    
+award/
+    __init__.py
+    admin.py
+    migrations/
+        __init__.py
+    models.py
+    tests.py
+    views.py
