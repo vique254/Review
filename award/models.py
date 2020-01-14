@@ -6,9 +6,9 @@ class Profile(models.Model):
    bio = models.CharField(max_length=200)
    
 class   Image(models.Model):
-    image =models.ImageField(upload_to='home')
+    images =models.ImageField(upload_to='home')
     image_name = models.CharField(max_length=10)
     image_caption = models.CharField(max_length=250)
     profile = models.ForeignKey(Profile)
-    likes = models.ManyToManyField('self', symmetrical = False, null = True)
+    likes = models.ManyToManyField('self', symmetrical = False)
     comments =models.TextField()
