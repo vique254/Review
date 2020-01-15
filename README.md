@@ -5,7 +5,7 @@
 [Vique254](https://github.com/vique254)
 
 ## Description
-This is an application like Awwards that allow a user to post a project he/she has created and get it reviewed by his/her peers..
+This is an application like Awwards that allow a user to post a project he/she has created and get it reviewed by his/her peers.
 
 ## Set-up Instructions
 * In the terminal navigate to the directory you want the project to reside in e.g (cd ~/Desktop)
@@ -14,7 +14,7 @@ This is an application like Awwards that allow a user to post a project he/she h
 * Open the project with a text editor eg visual studio (code .) or atom (atom .)
 
 ## Live link
-
+https://awward1.herokuapp.com/
 
 ## Technologies used
 * Python
