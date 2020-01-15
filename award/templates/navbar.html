@@ -9,8 +9,8 @@
   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
-<nav class="navbar navbar-inverse" >
-  <div class="container-fluid">
+<nav class="navbar navbar-inverse " >
+  <div class="container-fluid bg-primary">
     <div class="navbar-header  ">
       <div class="dropdown">
             <a class="navbar-brand " >MENU</a>     
@@ -21,15 +21,70 @@
             </div>
           </div>
     </div>
-  </div>
+       <!-- Adding a search form  -->
+       <div class="col-sm-4 col-md-4 navbar-right">
+
+            <form class="navbar-form" role="search" action="{% url 'search_results' %}">
+    
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search Project" name="project">
+                <div class="input-group-btn">
+                  <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                </div>
+              </div>
+    
+            </form>
+          </div>
+          <!-- search form end -->
+  
+  <div class="col-sm-6 col-md-6">
+        {% if user.is_authenticated %}
+        <ul>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" role="button" aria-expanded="false" style="float:left;">Account
+                      <span class="caret"></span>
+                  </a>
+            <ul class="dropdown-menu" role="menu">
+              <li>
+                <a href="{%url 'home'%}">Home</a>
+              </li>
+              <li>
+                <a href="/accounts/password/change">Change Password</a>
+              </li>
+              <li>
+                <a href="/logout">Logout</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        {% else %}
+        <li>
+          <a class='btn btn-success' href="/accounts/login">Login</a>
+        </li>
+
+        {% endif %}
+      </div>
+      <ul>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" role="button" aria-expanded="false" style="color:purple; justify-content: left;">Account
+                        <span class="caret"></span>
+                    </a>
+              <ul class="dropdown-menu" role="menu">
+                <li>
+                  <a href="{% url 'new_project' %}">Create Project</a>
+                </li>
+                <li>
+                  <a href="/accounts/password/change">Change Password</a>
+                </li>
+                <li>
+                  <a href="/logout">Logout</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+               
+                <a href="/accounts/register" style="float:right;" class="btn btn-danger">REGISTER</a>
+        </div>
 </nav>
-<style>
-  .menu {
-  width: 35px;
-  height: 5px;
-  background-color: white;
-  margin: 6px 0;
-}
-</style>
 </body>
 </html>
