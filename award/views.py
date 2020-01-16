@@ -3,7 +3,6 @@ from django.contrib.auth.decorators import login_required
 from .forms import SignUpForm, NewProjectForm, ProfileForm
 from .models import Projects, Profile
 from rest_framework import generics, status
-from .serializers import ProjectSerializer, ProfileSerializer
 from rest_framework.response import Response
 
 # Create your views here.
@@ -66,9 +65,6 @@ def update_profile(request):
         args['form'] = form
     return render(request, 'update_profile.html', {'current_user':current_user, 'form':form})
 
-class ProjectList(generics.ListAPIView):
-    queryset = Projects.objects.all()
-    serializer_class = ProjectSerializer
 
     def post(self,request):
         serializer = ProjectSerializer(data=request.data)
